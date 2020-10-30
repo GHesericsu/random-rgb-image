@@ -1,6 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 const RandomOrg = require('random-org');
+const apiKey = require('../../../apiKey.js')
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends React.Component {
   }
 
   getNumber() {
-    const random = new RandomOrg({ apiKey: '7188c32e-e68e-4c2f-8539-ad019c187edc' });
+    const random = new RandomOrg({ apiKey: apiKey.apiKey.apiKey });
     const options = {
       n: 3,
       min: 0,
