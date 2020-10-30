@@ -19,3 +19,9 @@ Go to localhost:3003 on your browser
 * Click on **Generate New Image** to create a new and random image
 * Click on **Save Image** to save the image in png
 
+
+## Test the App
+
+```
+jest
+```
