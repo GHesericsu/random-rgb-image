@@ -61,9 +61,9 @@ class App extends React.Component {
     return (
       <div>
         <h1>Generate RGB Image</h1>
-        <button type="button" onClick={this.handleClick}>Generate New Image</button>
+        <button className="newImage" type="button" onClick={this.handleClick}>Generate New Image</button>
         <div>
-          <button type="button" onClick={this.saveImage}>Save Image</button>
+          <button className="save" type="button" onClick={this.saveImage}>Save Image</button>
         </div>
       </div>
     );
