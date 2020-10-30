@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1604059677068" clover="3.2.0">
+  <project timestamp="1604059677068" name="All files">
+    <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4" elements="16" coveredelements="11" complexity="0" loc="10" ncloc="10" packages="1" files="1" classes="1"/>
+    <file name="App.jsx" path="/Users/eric/Documents/HACKR/HRSF128/A-REACT-APP/client/src/Components/App.jsx">
+      <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
