@@ -9,30 +9,18 @@ class App extends React.Component {
       numbers:[],
     };
     this.getNumber = this.getNumber.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     
   }
 
-  getNumber() {
-    const random = new RandomOrg({ apiKey: '7188c32e-e68e-4c2f-8539-ad019c187edc' });
-    const options = {
-      n: 3,
-      min: 0,
-      max: 255
-    }
-    random.generateIntegers(options)
-      .then((result) => {
-        
-        this.setState({
-          numbers: result.random.data,
-        })
-        console.log(this.state.numbers)
-      })
+  handleClick() {
+    this.getNumber();
   }
 
-  createImage(arr) {
+  getNumber() {
     const random = new RandomOrg({ apiKey: '7188c32e-e68e-4c2f-8539-ad019c187edc' });
     const options = {
       n: 3,
@@ -43,31 +31,31 @@ class App extends React.Component {
       .then((result) => {
         this.setState({
           numbers: result.random.data,
-        })
-        console.log(this.state.numbers)
+        });
+        this.createImage(result.random.data)
       })
       .catch((err) => {
-        console.log(err)
-      })
-    const rgbString = `rgb(${arr[0], arr[1], arr[2], 1})`;
-    console.log(rgbString)
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
+        console.log(err);
+      });
+  }
+
+  createImage(numArr) {
+    console.log('createimage arr', numArr)
+    const rgbString = `rgb(${numArr[0]}, ${numArr[1]}, ${numArr[2]}, 1)`;
+    console.log('createImage',rgbString);
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
     ctx.fillStyle = rgbString;
     ctx.fillRect(10, 10, 120, 120);
   }
 
-  handleClick() {
-    console.log('clicked');
-  }
-
+  
   render() {
-    
+    console.log('state', this.state.numbers)
     return (
       <div>
         <h1>Generate RGB Image</h1>
-        <button type="button" onClick={this.getNumber}>generate number</button>
-        <button type="button" onClick={this.createImage}>Create Image</button>
+        <button type="button" onClick={this.handleClick}>Create Image</button>
         <div>
           Image
         </div>
