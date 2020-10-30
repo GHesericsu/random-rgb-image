@@ -11,9 +11,9 @@ describe('App Component', () => {
 
   test(`Generate Image Button Should Work`, () => {
     const mockFunction = jest.fn();
-    const wrapper = mount(<App />);
-    wrapper.find('.newImage').simulate('click');
-    expect(mockFunction.mock.calls.length).toBe(2);
-    wrapper.unmount();
+    const button = shallow((<button onClick={mockFunction}>Generate New Image</button>));
+    button.simulate('click');
+    expect(mockFunction.mock.calls.length).toBe(1);
+    button.unmount();
   });
 });
