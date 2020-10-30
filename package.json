@@ -13,8 +13,6 @@
   "description": "",
   "dependencies": {
     "@babel/runtime": "^7.10.5",
-    "axios": "^0.19.2",
-    "body-parser": "^1.19.0",
     "nodemon": "^2.0.4",
     "random-org": "^2.1.0",
     "react": "^16.13.1",

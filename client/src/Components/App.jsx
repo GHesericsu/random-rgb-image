@@ -52,7 +52,7 @@ class App extends React.Component {
     const canvas = document.getElementById('myCanvas');
     const dataURL = canvas.toDataURL('image/png');
     const url = dataURL.replace(/^data:image\/png/, 'data:application/octet-stream');
-    link.setAttribute('download', 'CanvasAsImage.png');
+    link.setAttribute('download', 'rgbimage.png');
     link.setAttribute('href', url);
     link.click();
   }
