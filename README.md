@@ -1,5 +1,7 @@
 # Random RGB Image
 This simple app will generate a randomly-colored 120x120px image and allow you to download the image in png file. The randomness is powered by random.org
+
+
 ![](generateImage.gif)
 ## Dependencies 
 
