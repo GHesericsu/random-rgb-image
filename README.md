@@ -1,1 +1,1 @@
-# A React App - custom React Starter App
+# Random RGB Image
