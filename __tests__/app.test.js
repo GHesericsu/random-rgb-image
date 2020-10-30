@@ -1,7 +1,7 @@
 import App from '../client/src/Components/App.jsx';
 
 describe('App Component', () => {
-  test('App component exists', () => {
+  test('App Component Exists', () => {
     const wrapper = mount(<App />);
     const instance = wrapper.instance();
     // console.log('wrapper', wrapper.find(App).children() )
@@ -10,4 +10,7 @@ describe('App Component', () => {
     expect(instance).toBeInstanceOf(App);
     wrapper.unmount();
   });
+  test(`An Image Exists`, () => {
+    
+  }), 
 });

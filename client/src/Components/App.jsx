@@ -1,22 +1,18 @@
+/* eslint-disable class-methods-use-this */
 import React from 'react';
-import axios from 'axios';
 const RandomOrg = require('random-org');
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numbers:[],
+      numbers: [],
     };
     this.getNumber = this.getNumber.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    
-  }
-
-  handleClick() {
     this.getNumber();
   }
 
@@ -32,7 +28,7 @@ class App extends React.Component {
         this.setState({
           numbers: result.random.data,
         });
-        this.createImage(result.random.data)
+        this.createImage(result.random.data);
       })
       .catch((err) => {
         console.log(err);
@@ -40,24 +36,34 @@ class App extends React.Component {
   }
 
   createImage(numArr) {
-    console.log('createimage arr', numArr)
     const rgbString = `rgb(${numArr[0]}, ${numArr[1]}, ${numArr[2]}, 1)`;
-    console.log('createImage',rgbString);
-    const canvas = document.getElementById("myCanvas");
-    const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
     ctx.fillStyle = rgbString;
     ctx.fillRect(10, 10, 120, 120);
   }
 
-  
+  handleClick() {
+    this.getNumber();
+  }
+
+  saveImage() {
+    const link = document.createElement('a');
+    const canvas = document.getElementById('myCanvas');
+    const dataURL = canvas.toDataURL('image/png');
+    const url = dataURL.replace(/^data:image\/png/, 'data:application/octet-stream');
+    link.setAttribute('download', 'CanvasAsImage.png');
+    link.setAttribute('href', url);
+    link.click();
+  }
+
   render() {
-    console.log('state', this.state.numbers)
     return (
       <div>
         <h1>Generate RGB Image</h1>
-        <button type="button" onClick={this.handleClick}>Create Image</button>
+        <button type="button" onClick={this.handleClick}>Generate New Image</button>
         <div>
-          Image
+          <button type="button" onClick={this.saveImage}>Save Image</button>
         </div>
       </div>
     );
@@ -65,4 +71,3 @@ class App extends React.Component {
 }
 
 export default App;
-
